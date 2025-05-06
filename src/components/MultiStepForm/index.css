@@ -1,0 +1,106 @@
+/* index.css */
+
+/* Reset some ugly default margins */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f2f6fc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+}
+
+/* Container of the form */
+.form-container {
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    width: 320px;
+    text-align: center;
+    animation: popUp 0.4s ease-out;
+}
+
+/* Little pop-up effect */
+@keyframes popUp {
+    from {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Heading */
+h2 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+/* The form itself */
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    margin-top: 1rem;
+}
+
+/* Styling the input */
+input {
+    padding: 10px 14px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+/* Input focus effect */
+input:focus {
+    border-color: #4f46e5;
+    outline: none;
+}
+
+/* Group for buttons (back + next/submit) */
+.button-group {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+/* Main button style */
+.btn {
+    background-color: #4f46e5;
+    color: #ffffff;
+    padding: 10px 14px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    flex: 1; /* Make buttons equally stretch */
+    transition: background-color 0.3s;
+}
+
+/* Main button hover */
+.btn:hover {
+    background-color: #4338ca;
+}
+
+/* Special style for back button */
+.back-btn {
+    background-color: #9ca3af;
+}
+
+/* Back button hover */
+.back-btn:hover {
+    background-color: #6b7280;
+}

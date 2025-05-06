@@ -1,15 +1,23 @@
-import './App.css'
-import PhoneOtpForm from './components/PhoneOtpLogin/phone-login';
+import "./App.css";
+import useFetch from "./components/CustomHooks/use-fetch";
 function App() {
+  const { data: joke, loading, error, refetch } = useFetch(
+    "https://v2.jokeapi.dev/joke/Any"
+  );
+
+  if (loading) return <h1> LOADING...</h1>;
+
+  if (error) console.log(error);
 
   return (
-    <>
-      <div children="App">
-        <h1>Phone OTP Login</h1>
-        <PhoneOtpForm />
-      </div>
-    </>
-  )
+    <div className="App">
+      <h1>
+        {joke?.setup} : {joke?.delivery}
+      </h1>
+
+      <button onClick={refetch}> Refetch</button>
+    </div>
+  );
 }
 
 export default App;
